@@ -1,29 +1,31 @@
 import React from "react";
-import Socials from "../socials";
-
 import { FaSpotify } from "react-icons/fa";
 import axios from "axios";
 import Link from "next/link";
+import useSWR from "swr";
+import Socials from "../socials";
 
 const Footer = () => {
   const [track, setTrack] = React.useState<any>(null);
-  const domain =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : "https://klefcodes.net/";
-  const getCurrentTrack = async () => {
-    const response = await axios.get(`${domain}/api/track`);
-    setTrack(response.data);
-  };
-  //   React.useEffect(() => {
-  // getCurrentTrack();
-  //   }, []);
+
+  const fetcher = async (url: string) =>
+    await axios.get(url).then((res) => res.data);
+  const { data, error } = useSWR(`/api/track`, fetcher);
+
+  React.useEffect(() => {
+    setTrack(data);
+  }, [data]);
+
   return (
     <footer className="p-5 border-t border-black dark:border-white space-y-4">
-      {track && (
+      {track ? (
         <Link href={track.item.uri}>
           <a>
-            <div className="flex items-center space-x-2 text-green-500">
+            <div
+              className={`flex items-center space-x-2 ${
+                track.is_playing ? "text-green-500" : ""
+              }`}
+            >
               <span>
                 <FaSpotify />
               </span>
@@ -35,6 +37,13 @@ const Footer = () => {
             </div>
           </a>
         </Link>
+      ) : (
+        <div className="flex items-center space-x-2">
+          <span>
+            <FaSpotify />
+          </span>
+          <span>{error ? "Failed" : "Loading"} – Spotify</span>
+        </div>
       )}
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2">
