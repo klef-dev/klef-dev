@@ -1,9 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Lexend Deca", sans-serif;
 }
 
 a {
@@ -15,12 +18,94 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+@layer components {
   body {
-    color: white;
-    background: black;
+    @apply bg-white dark:bg-black text-black dark:text-white;
+  }
+  .language-scrollbar::-webkit-scrollbar {
+    @apply h-1 w-14;
+  }
+
+  /* Track */
+  .language-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent w-60;
+  }
+
+  /* Handle */
+  .language-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-transparent rounded-xl;
+  }
+
+  /* Handle on hover */
+  .language-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-black dark:bg-white;
+  }
+  /* .switch {
+    @apply text-xs relative inline-block w-14 h-6;
+  }
+  .switch input {
+    @apply hidden opacity-0 w-0 h-0;
+  }
+  .slider {
+    @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-black dark:bg-white transition duration-150 rounded-3xl;
+  }
+  .slider::before {
+    @apply absolute contents
+  } */
+  .switch {
+    --secondary-container: #f9fafb;
+    --primary: #111111;
+    font-size: 10px;
+    position: relative;
+    display: inline-block;
+    width: 3.7em;
+    height: 1.8em;
+  }
+
+  .switch input {
+    display: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111;
+    transition: 0.2s;
+    border-radius: 30px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.2em;
+    bottom: 0.2em;
+    background-color: #f9fafb;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider::before {
+    background-color: var(--primary);
+  }
+
+  input:checked + .slider {
+    background-color: var(--secondary-container);
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--secondary-container);
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(1.9em);
   }
 }
