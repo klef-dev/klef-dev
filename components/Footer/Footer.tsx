@@ -19,24 +19,29 @@ const Footer = () => {
   return (
     <footer className="p-5 border-t border-black dark:border-white space-y-4">
       {track ? (
-        <Link href={track.item.external_urls.spotify} passHref>
-          <a target="_blank" rel="noopener noreferrer">
-            <div
-              className={`flex items-center space-x-2 ${
-                track.is_playing ? "text-green-500" : ""
-              }`}
-            >
+        <>
+          {track.is_playing ? (
+            <Link href={track.item.external_urls.spotify} passHref>
+              <a target="_blank" rel="noopener noreferrer">
+                <div className="flex items-center space-x-2 text-green-500">
+                  <span>
+                    <FaSpotify />
+                  </span>
+                  <span>
+                    {track.item.name} - {track.item.artists[0].name}
+                  </span>
+                </div>
+              </a>
+            </Link>
+          ) : (
+            <div className="flex items-center space-x-2">
               <span>
                 <FaSpotify />
               </span>
-              <span>
-                {track.is_playing
-                  ? `${track.item.name} - ${track.item.artists[0].name}`
-                  : "Not Playing – Spotify"}
-              </span>
+              <span>Not Playing – Spotify</span>
             </div>
-          </a>
-        </Link>
+          )}
+        </>
       ) : (
         <div className="flex items-center space-x-2">
           <span>
