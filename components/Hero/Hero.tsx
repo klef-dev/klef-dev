@@ -17,7 +17,7 @@ const Hero = () => {
             data-aos="zoom-in"
             className="text-3xl  md:text-left text-center font-semibold  md:w-fit"
           >
-            Hey! I'm Abraham Ugbeshe
+            Hey! {"I'm"} Abraham Ugbeshe
           </h1>
           <p data-aos="flip-up">
             Also called Klef! I build stuff that works on the web! 😉
@@ -38,10 +38,10 @@ const Hero = () => {
           </p>
           <Languages />
           <p>
-            Previously, I've worked with startups and participate in community
-            driven initiatives. I worked multiple roles; ranging from being a
-            Backend, DevOps to Full-stack developer. These days, I am more
-            focused on experimentation, strategy, analysis and backend
+            Previously, {"I've"} worked with startups and participate in
+            community driven initiatives. I worked multiple roles; ranging from
+            being a Backend, DevOps to Full-stack developer. These days, I am
+            more focused on experimentation, strategy, analysis and backend
             implementation of products.
           </p>
         </div>
