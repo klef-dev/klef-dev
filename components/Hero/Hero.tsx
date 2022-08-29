@@ -1,16 +1,23 @@
+import Image from "next/image";
 import React from "react";
 import Languages from "../Languages";
 
 const Hero = () => {
   return (
-    <main className="w-full min-h-screen flex flex-col items-center  p-5 ">
+    <main className="w-full min-h-fit flex flex-col items-center p-5">
       <section className="w-full flex flex-col md:flex-row justify-center items-center md:items-start md:justify-between space-y-5 md:space-y-0">
-        <div data-aos="zoom-in" className="md:w-1/4">
-          <img
-            src="../../images/pic.jpg"
+        <div
+          data-aos="zoom-in"
+          className="relative rounded-full overflow-hidden p-1 bg-red-900 flex items-center justify-center"
+        >
+          <Image
+            src="/images/pic.jpg"
             alt=""
-            className="w-36 h-36 rounded-full"
+            className="rounded-full"
+            width={150}
+            height={150}
           />
+          <span className="absolute bottom-0 z-50">😜</span>
         </div>
         <div className="flex flex-col justify-between md:p-5 space-y-5 h-fit md:w-8/12">
           <h1

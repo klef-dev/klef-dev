@@ -13,7 +13,7 @@ const Languages = () => {
         data-aos-anchor-placement="top-bottom"
       >
         <h1 className="text-2xl font-semibold">Languages</h1>
-        <div className="flex items-center justify-between space-x-3  overflow-x-auto pb-3 language-scrollbar">
+        <div className="flex items-center space-x-5 overflow-x-auto pb-3 language-scrollbar">
           <span
             title="JavaScript"
             className="text-4xl transform transition duration-500 hover:scale-125 cursor-pointer"
@@ -40,7 +40,7 @@ const Languages = () => {
         data-aos-anchor-placement="top-bottom"
       >
         <h1 className="text-2xl font-semibold">Frameworks</h1>
-        <div className="flex items-center justify-between space-x-3  overflow-x-auto pb-3 language-scrollbar">
+        <div className="flex items-center space-x-5 overflow-x-auto pb-3 language-scrollbar">
           <span
             title="Nodejs"
             className="text-5xl transform transition duration-500 hover:scale-125 cursor-pointer"
