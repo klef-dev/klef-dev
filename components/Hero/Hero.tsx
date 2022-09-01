@@ -36,8 +36,8 @@ const Hero = () => {
             design & scale full-stack web applications.
           </p>
           <p>
-            I am a focused driven developer, and I currently work at RBCUK LTD,
-            United Kingdom.
+            I am a focused driven developer, and I currently building{" "}
+            <a href="https://brimble.io">Brimble</a>
           </p>
           <p>
             I love my work, it has allowed me to understand development of

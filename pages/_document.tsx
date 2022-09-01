@@ -17,6 +17,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           ></link>
           <Script
+            id="theme-script"
             strategy="beforeInteractive"
             dangerouslySetInnerHTML={{
               __html: `
