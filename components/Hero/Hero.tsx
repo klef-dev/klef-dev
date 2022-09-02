@@ -6,18 +6,17 @@ const Hero = () => {
   return (
     <main className="w-full min-h-fit flex flex-col items-center p-5">
       <section className="w-full flex flex-col md:flex-row justify-center items-center md:items-start md:justify-between space-y-5 md:space-y-0">
-        <div
-          data-aos="zoom-in"
-          className="relative rounded-full overflow-hidden p-1 bg-red-900 flex items-center justify-center"
-        >
-          <Image
-            src="/images/pic.jpg"
-            alt=""
-            className="rounded-full"
-            width={150}
-            height={150}
-          />
-          <span className="absolute bottom-0 z-50">😜</span>
+        <div data-aos="zoom-in" className="relative">
+          <div className="bg-red-900 p-1 rounded-full flex items-center justify-center">
+            <Image
+              src="/images/pic.jpg"
+              alt=""
+              className="rounded-full"
+              width={150}
+              height={150}
+            />
+          </div>
+          <span className="absolute bottom-0 right-6 z-50">😜</span>
         </div>
         <div className="flex flex-col justify-between md:p-5 space-y-5 h-fit md:w-8/12">
           <h1
