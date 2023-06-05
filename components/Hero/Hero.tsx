@@ -23,7 +23,7 @@ const Hero = () => {
             data-aos="zoom-in"
             className="text-3xl  md:text-left text-center font-semibold  md:w-fit"
           >
-            Hey! {"I'm"} Abraham Ugbeshe
+            Hey! {"I'm"} Awesome
           </h1>
           <p data-aos="flip-up">
             Also called Klef! I build stuff that works on the web! 😉
