@@ -27,10 +27,10 @@ type Playing struct {
 	IsPlaying bool `json:"is_playing"`
 }
 type Track struct {
-	ID        string   `json:"id"`
-	Name      string   `json:"name"`
+	ID        string   `json:"id,omitempty"`
+	Name      string   `json:"name,omitempty"`
 	IsPlaying bool     `json:"is_playing"`
-	Artists   []Common `json:"artists"`
+	Artists   []Common `json:"artists,omitempty"`
 }
 
 type AccessToken struct {
@@ -61,7 +61,11 @@ func main() {
 	})
 
 	app.Get("/track", func(c *fiber.Ctx) error {
-		data := getNowPlaying()
+		data, err := getNowPlaying()
+
+		if err != nil {
+			return c.JSON(fiber.Map{"message": "Error getting currently playing track", "data": Track{IsPlaying: false}})
+		}
 
 		if !data.IsPlaying {
 			return c.JSON(fiber.Map{"message": "Currently not playing anything on Spotify", "data": Track{IsPlaying: false}})
@@ -78,7 +82,7 @@ func main() {
 	log.Fatal(app.Listen(":" + port))
 }
 
-func getAccessToken() AccessToken {
+func getAccessToken() (AccessToken, error) {
 	client_id := os.Getenv("SPOTIFY_CLIENT_ID")
 	client_secret := os.Getenv("SPOTIFY_CLIENT_SECRET")
 	refresh_token := os.Getenv("SPOTIFY_REFRESH_TOKEN")
@@ -93,9 +97,10 @@ func getAccessToken() AccessToken {
 
 	client := &http.Client{}
 	req, err := http.NewRequest("POST", url, bytes.NewBuffer(nil))
+	var accessToken AccessToken
 
 	if err != nil {
-		log.Fatal(err)
+		return accessToken, err
 	}
 
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
@@ -104,27 +109,34 @@ func getAccessToken() AccessToken {
 	res, err := client.Do(req)
 	if err != nil {
 		fmt.Println("Error performing request:", err)
+		return accessToken, err
 	}
 	defer res.Body.Close()
 
 	data, err := io.ReadAll(res.Body)
 
 	if err != nil {
-		log.Fatal(err)
+		return accessToken, err
 	}
 
 	// Convert the JSON data into a struct
-	var accessToken AccessToken
 	err = json.Unmarshal(data, &accessToken)
 	if err != nil {
 		fmt.Println("Error decoding JSON:", err)
 	}
 
-	return accessToken
+	return accessToken, nil
 }
 
-func getNowPlaying() Playing {
-	data := getAccessToken()
+func getNowPlaying() (Playing, error) {
+	var playing Playing
+
+	data, err := getAccessToken()
+
+	if err != nil {
+		return playing, err
+	}
+
 	access_token := data.AccessToken
 
 	client := &http.Client{}
@@ -132,7 +144,7 @@ func getNowPlaying() Playing {
 	req, err := http.NewRequest("GET", NOW_PLAYING_ENDPOINT, bytes.NewBuffer(nil))
 
 	if err != nil {
-		log.Fatal(err)
+		return playing, err
 	}
 
 	req.Header.Set("Authorization", "Bearer "+access_token)
@@ -141,21 +153,22 @@ func getNowPlaying() Playing {
 
 	if err != nil {
 		fmt.Println("Error performing request:", err)
+		return playing, err
 	}
 	defer res.Body.Close()
 
 	response, err := io.ReadAll(res.Body)
 
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
+	} else if len(response) == 0 {
+		playing.IsPlaying = false
+	} else {
+		err = json.Unmarshal(response, &playing)
+		if err != nil {
+			log.Println("Error decoding JSON:", err)
+		}
 	}
 
-	var playing Playing
-
-	err = json.Unmarshal(response, &playing)
-	if err != nil {
-		fmt.Println("Error decoding JSON:", err)
-	}
-
-	return playing
+	return playing, nil
 }
