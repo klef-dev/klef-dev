@@ -1,7 +1,6 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import Image from "next/image";
 
 import Link from "next/link";
 import React from "react";
@@ -47,8 +46,8 @@ export default function Home() {
                         </svg>
                     ) : (
                         <svg
-                            width="64px"
-                            height="64px"
+                            width="40px"
+                            height="40px"
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
                             className="scale-50 dark:hidden block"
@@ -75,7 +74,7 @@ export default function Home() {
                 </button>
             </div>
             <div className="max-w-2xl px-8 text-sm dark:text-gray-500">
-                Hi, I'm Klef.
+                Yooo, I&apos;m Abraham.
                 <br />
                 <br />I build{" "}
                 <Link
@@ -86,23 +85,21 @@ export default function Home() {
                 >
                     stuff
                 </Link>{" "}
-                that works on the web!
+                that works on the web 👨🏽‍💻
                 <br />
-                I'm obsessed with crafting{" "}
+                I&apos;m obsessed with creating the best{" "}
                 <span className="relative cursor-default bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-gradient-to-r after:from-orange-400 after:to-orange-300 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-left hover:after:scale-x-100 after:origin-right after:scale-x-0">
-                    delightful
-                </span>{" "}
-                UI and <br /> web experiences.
+                    workflows
+                </span>{" "} and <br /> web experiences for developers.
                 <br />
-                <br />I made{" "}
+                <br />I created{" "}
                 <Link
-                    className="relative bg-gradient-to-r from-cyan-400 to-cyan-300 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-cyan-400 after:to-cyan-300 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
+                    className="relative bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-blue-400 after:to-blue-300 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
                     href="https://brimble.io"
                     target="_blank"
                 >
                     Brimble
-                </Link>{" "}
-                .<br />
+                </Link>{" "} a deployment platform.<br />
                 <br />
                 Follow me on
                 <br />
@@ -117,7 +114,7 @@ export default function Home() {
                 ,{" "}
                 <Link
                     className="relative bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-blue-600 after:to-blue-500 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
-                    href="https://www.linkedin.com/in/klefcodes/"
+                    href="https://www.linkedin.com/in/klefcodes"
                     rel="noopener"
                     target="_blank"
                 >
@@ -144,7 +141,7 @@ export default function Home() {
 
             <div className="absolute bottom-0 right-0 grid justify-items-end gap-1 p-2 text-[10px] text-gray-500 sm:p-4">
                 <a
-                    href="https://open.spotify.com/user/86poj7ufl4f9wj0un1vdkljsc?si=afb5b42cbdc24214"
+                    href="https://open.spotify.com/user/60c4w28s5vmzo03qrlssmief6?si=0c72c362ccd94fe1"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="grid cursor-cell select-none grid-flow-col gap-1.5 pl-4 transition-all hover:text-gray-300"
@@ -216,7 +213,7 @@ export default function Home() {
                     </svg>
                 </div>
                 <a
-                    href="https://www.google.com/maps/search/Tainan, Taiwan"
+                    href="https://www.google.com/maps/search/Abuja, Nigeria"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="grid cursor-ne-resize select-none grid-flow-col gap-1.5 transition-all hover:text-gray-300"
