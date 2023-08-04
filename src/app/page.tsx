@@ -3,11 +3,42 @@
 import { useTheme } from "next-themes";
 
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
+
+const tools = [
+    {
+        name: "React",
+        url: "https://reactjs.org/",
+        class: "from-blue-500 to-blue-500 after:from-blue-400 after:to-blue-500",
+    },
+    {
+        name: "Next.js",
+        url: "https://nextjs.org/",
+        class: "from-gray-500 to-gray-500 after:from-gray-400 after:to-gray-500",
+    },
+    {
+        name: "Tailwind CSS",
+        url: "https://tailwindcss.com/",
+        class: "from-blue-500 to-blue-500 after:from-blue-400 after:to-blue-500",
+    },
+    {
+        name: "Vercel",
+        url: "https://vercel.com/",
+        class: "from-blue-500 to-blue-500 after:from-blue-400 after:to-blue-500",
+    },
+    {
+        name: "Figma",
+        url: "https://figma.com/",
+        class: "from-orange-500 to-orange-500 after:from-orange-400 after:to-orange-500",
+    },
+];
 
 export default function Home() {
     const { theme, setTheme } = useTheme();
     const [mounted, setMounted] = React.useState(false);
+
+    const [showTools, setShowTools] = React.useState(false);
 
     const toggle = () => {
         setTheme(theme === "dark" ? "light" : "dark");
@@ -17,11 +48,29 @@ export default function Home() {
 
     if (!mounted) return null;
     return (
-        <main className="flex flex-col items-center justify-center min-h-screen w-screen">
+        <main className="flex flex-col items-center justify-center w-screen min-h-screen">
+            <div
+                onClick={() => setShowTools(false)}
+                className={`z-50 backdrop-blur-sm transition-all flex items-center justify-center duration-300 bg-black/80  w-screen fixed top-0 left-0 ${
+                    showTools ? "h-screen" : "h-0"
+                }`}
+            >
+                <div className="max-w-2xl px-8 text-sm">
+                    {tools.map((tool) => (
+                        <Link href={tool.url} key={tool.name}>
+                            <span
+                                className={`m-2 relative bg-gradient-to-r bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0 ${tool.class}`}
+                            >
+                                {tool?.name}
+                            </span>
+                        </Link>
+                    ))}
+                </div>
+            </div>
             <div className="">
                 <button
                     onClick={toggle}
-                    className="h-20 w-20 flex items-center justify-center"
+                    className="flex items-center justify-center w-20 h-20"
                 >
                     {theme === "dark" ? (
                         <svg
@@ -53,7 +102,7 @@ export default function Home() {
                             height="40px"
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
-                            className="scale-50 dark:hidden block"
+                            className="block scale-50 dark:hidden"
                         >
                             <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
@@ -107,6 +156,17 @@ export default function Home() {
                 a deployment platform.
                 <br />
                 <br />
+                Here are the{" "}
+                <button
+                    onClick={() => setShowTools(true)}
+                    className="relative bg-gradient-to-r from-orange-900 to-orange-900 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-orange-900 after:to-orange-900 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
+                    // href="/?tools=true"
+                >
+                    tools
+                </button>{" "}
+                i have worked with.
+                <br />
+                <br />
                 Follow me on
                 <br />
                 <Link
@@ -152,11 +212,11 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="grid cursor-cell select-none grid-flow-col gap-1.5 pl-4 transition-all hover:text-gray-300"
                 >
-                    <div className="line-clamp-1 break-all leading-4">
+                    <div className="leading-4 break-all line-clamp-1">
                         Not Playing
                     </div>
                     <svg
-                        className="icon icon-tabler icon-tabler-brand-spotify h-4 w-4"
+                        className="w-4 h-4 icon icon-tabler icon-tabler-brand-spotify"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -183,7 +243,7 @@ export default function Home() {
                         })}
                     </div>
                     <svg
-                        className="icon icon-tabler icon-tabler-clock-hour-4 h-4 w-4"
+                        className="w-4 h-4 icon icon-tabler icon-tabler-clock-hour-4"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -224,7 +284,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="grid cursor-ne-resize select-none grid-flow-col gap-1.5 transition-all hover:text-gray-300"
                 >
-                    <div className="line-clamp-1 break-all leading-4">
+                    <div className="leading-4 break-all line-clamp-1">
                         Abuja, Nigeria
                     </div>
                     <svg
