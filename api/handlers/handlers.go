@@ -14,7 +14,7 @@ func GetTrack(c *fiber.Ctx) error {
 	data, err := utils.GetNowPlaying()
 
 	if err != nil {
-		return c.JSON(fiber.Map{"message": "Error getting currently playing track", "data": utils.Track{IsPlaying: false}})
+		return c.Status(400).JSON(fiber.Map{"message": "Error getting currently playing track", "data": utils.Track{IsPlaying: false}})
 	}
 
 	if !data.IsPlaying {
