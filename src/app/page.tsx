@@ -19,7 +19,10 @@ export default function Home() {
     return (
         <main className="flex flex-col items-center justify-center min-h-screen w-screen">
             <div className="">
-                <button onClick={toggle}>
+                <button
+                    onClick={toggle}
+                    className="h-20 w-20 flex items-center justify-center"
+                >
                     {theme === "dark" ? (
                         <svg
                             fill="#fff"
@@ -73,7 +76,7 @@ export default function Home() {
                     )}
                 </button>
             </div>
-            <div className="max-w-2xl px-8 text-sm dark:text-gray-500">
+            <div className="max-w-2xl px-8 text-sm text-gray-500">
                 Yooo, I&apos;m Abraham.
                 <br />
                 <br />I build{" "}
@@ -90,7 +93,8 @@ export default function Home() {
                 I&apos;m obsessed with creating the best{" "}
                 <span className="relative cursor-default bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-gradient-to-r after:from-orange-400 after:to-orange-300 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-left hover:after:scale-x-100 after:origin-right after:scale-x-0">
                     workflows
-                </span>{" "} and <br /> web experiences for developers.
+                </span>{" "}
+                and <br /> web experiences for developers.
                 <br />
                 <br />I created{" "}
                 <Link
@@ -99,7 +103,9 @@ export default function Home() {
                     target="_blank"
                 >
                     Brimble
-                </Link>{" "} a deployment platform.<br />
+                </Link>{" "}
+                a deployment platform.
+                <br />
                 <br />
                 Follow me on
                 <br />
