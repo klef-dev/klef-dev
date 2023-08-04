@@ -172,7 +172,12 @@ export default function Home() {
                 </a>
                 <div className="grid select-none grid-flow-col gap-1.5 transition-all hover:text-gray-300">
                     <div className="font-mono leading-4 tracking-wider">
-                        7:37:40 PM
+                        {new Date().toLocaleTimeString("en-US", {
+                            timeZone: "Africa/Lagos",
+                            hour: "numeric",
+                            minute: "numeric",
+                            hour12: true,
+                        })}
                     </div>
                     <svg
                         className="icon icon-tabler icon-tabler-clock-hour-4 h-4 w-4"
@@ -217,7 +222,7 @@ export default function Home() {
                     className="grid cursor-ne-resize select-none grid-flow-col gap-1.5 transition-all hover:text-gray-300"
                 >
                     <div className="line-clamp-1 break-all leading-4">
-                        Tainan, Taiwan
+                        Abuja, Nigeria
                     </div>
                     <svg
                         className="icon icon-tabler icon-tabler-location mx-px h-4 w-3.5"
