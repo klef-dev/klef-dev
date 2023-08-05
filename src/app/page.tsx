@@ -51,7 +51,7 @@ export default function Home() {
         <main className="flex flex-col items-center justify-center w-screen min-h-screen">
             <div
                 onClick={() => setShowTools(false)}
-                className={`z-50 backdrop-blur-sm transition-all flex items-center justify-center duration-300 bg-black/80  w-screen fixed top-0 left-0 ${
+                className={`z-50 backdrop-blur-sm transition-all flex items-center justify-center duration-300 bg-black/80  w-screen fixed top-0 left-0 overflow-hidden ${
                     showTools ? "h-screen" : "h-0"
                 }`}
             >
