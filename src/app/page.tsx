@@ -1,6 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -8,29 +9,76 @@ import React from "react";
 
 const tools = [
     {
-        name: "React",
-        url: "https://reactjs.org/",
-        class: "from-blue-500 to-blue-500 after:from-blue-400 after:to-blue-500",
+        name: "TypeScript",
+        url: "https://www.typescriptlang.org/",
+        class: "hover:from-blue-500 hover:to-blue-500 after:hover:from-blue-400 after:hover:to-blue-500",
+        id: "typescript",
     },
     {
         name: "Next.js",
         url: "https://nextjs.org/",
-        class: "from-gray-500 to-gray-500 after:from-gray-400 after:to-gray-500",
+        class: "hover:from-gray-500 hover:to-gray-500 after:hover:from-gray-400 after:hover:to-gray-500",
+        id: "nextdotjs/gray",
     },
     {
-        name: "Tailwind CSS",
-        url: "https://tailwindcss.com/",
-        class: "from-blue-500 to-blue-500 after:from-blue-400 after:to-blue-500",
+        name: "PHP",
+        url: "https://www.php.net/",
+        class: "hover:from-purple-200 hover:to-purple-200 after:hover:from-purple-400 after:hover:to-purple-200",
+        id: "php",
     },
     {
         name: "Vercel",
         url: "https://vercel.com/",
-        class: "from-blue-500 to-blue-500 after:from-blue-400 after:to-blue-500",
+        class: "hover:from-blue-500 hover:to-blue-500 after:hover:from-blue-400 after:hover:to-blue-500",
+        id: "vercel/gray",
     },
     {
-        name: "Figma",
-        url: "https://figma.com/",
-        class: "from-orange-500 to-orange-500 after:from-orange-400 after:to-orange-500",
+        name: "Python",
+        url: "https://www.python.org/",
+        class: "hover:from-yellow-500 hover:to-yellow-500 after:hover:from-yellow-400 after:hover:to-yellow-500",
+        id: "python",
+    },
+    {
+        name: "Django",
+        url: "https://www.djangoproject.com/",
+        class: "hover:from-green-500 hover:to-green-500 after:hover:from-green-400 after:hover:to-green-500",
+        id: "django",
+    },
+    {
+        name: "Nodejs",
+        url: "https://nodejs.org/",
+        class: "hover:from-green-500 hover:to-green-500 after:hover:from-green-400 after:hover:to-green-500",
+        id: "nodedotjs",
+    },
+    {
+        name: "Express",
+        url: "https://expressjs.com/",
+        class: "hover:from-gray-500 hover:to-gray-500 after:hover:from-gray-400 after:hover:to-gray-500",
+        id: "express/gray",
+    },
+    {
+        name: "MongoDB",
+        url: "https://www.mongodb.com/",
+        class: "hover:from-green-500 hover:to-green-500 after:hover:from-green-400 after:hover:to-green-500",
+        id: "mongodb",
+    },
+    {
+        name: "Flask",
+        url: "https://flask.palletsprojects.com/",
+        class: "hover:from-gray-500 hover:to-gray-500 after:hover:from-gray-400 after:hover:to-gray-500",
+        id: "flask/gray",
+    },
+    {
+        name: "PostgreSQL",
+        url: "https://www.postgresql.org/",
+        class: "hover:from-blue-500 hover:to-blue-500 after:hover:from-blue-400 after:hover:to-blue-500",
+        id: "postgresql",
+    },
+    {
+        name: "MySQL",
+        url: "https://www.mysql.com/",
+        class: "hover:from-blue-500 hover:to-blue-500 after:hover:from-blue-400 after:hover:to-blue-500",
+        id: "mysql",
     },
 ];
 
@@ -55,11 +103,22 @@ export default function Home() {
                     showTools ? "h-screen" : "h-0"
                 }`}
             >
-                <div className="max-w-2xl px-8 text-sm">
+                <div className="grid items-center max-w-2xl grid-cols-4 gap-4 px-8 text-sm">
                     {tools.map((tool) => (
-                        <Link href={tool.url} key={tool.name}>
+                        <Link
+                            href={tool.url}
+                            key={tool.name}
+                            className="flex flex-row items-center m-4 space-x-2 grayscale hover:grayscale-0"
+                        >
+                            <img
+                                className=""
+                                src={`https://cdn.simpleicons.org/${tool.id}`}
+                                width={30}
+                                height={30}
+                                alt={tool.name as string}
+                            />
                             <span
-                                className={`m-2 relative bg-gradient-to-r bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0 ${tool.class}`}
+                                className={`relative whitespace-nowrap  bg-gradient-to-r from-gray-500 to-gray-500 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0  ${tool.class}`}
                             >
                                 {tool?.name}
                             </span>
@@ -82,12 +141,12 @@ export default function Home() {
                             xmlns="http://www.w3.org/2000/svg"
                             className="scale-50 dark:block"
                         >
-                            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                            <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
                             <g
                                 id="SVGRepo_tracerCarrier"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                             />
 
                             <g id="SVGRepo_iconCarrier">
@@ -104,21 +163,21 @@ export default function Home() {
                             xmlns="http://www.w3.org/2000/svg"
                             className="block scale-50 dark:hidden"
                         >
-                            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                            <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
                             <g
                                 id="SVGRepo_tracerCarrier"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                             />
 
                             <g id="SVGRepo_iconCarrier">
                                 <path
                                     d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z"
                                     stroke="#121212"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                 />{" "}
                             </g>
                         </svg>
@@ -220,11 +279,11 @@ export default function Home() {
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
-                        stroke-width="1.7"
+                        strokeWidth="1.7"
                         stroke="currentColor"
                         fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                     >
                         <path stroke="none" d="M0 0h24v24H0z"></path>
                         <circle cx="12" cy="12" r="9"></circle>
@@ -247,30 +306,30 @@ export default function Home() {
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
-                        stroke-width="1.7"
+                        strokeWidth="1.7"
                         stroke="currentColor"
                         fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                     >
                         <path stroke="none" d="M0 0h24v24H0z"></path>
                         <circle cx="12" cy="12" r="9"></circle>
                         <line
-                            stroke-width="1.7"
+                            strokeWidth="1.7"
                             x1="12"
                             y1="12"
                             x2="10.250000000000004"
                             y2="15.031088913245537"
                         ></line>
                         <line
-                            stroke-width="1.7"
+                            strokeWidth="1.7"
                             x1="12"
                             y1="12"
                             x2="8.654346968205711"
                             y2="15.715724127386972"
                         ></line>
                         <line
-                            stroke-width="1"
+                            strokeWidth="1"
                             x1="12"
                             y1="12"
                             x2="6.370834875401148"
@@ -292,11 +351,11 @@ export default function Home() {
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
-                        stroke-width="1.7"
+                        strokeWidth="1.7"
                         stroke="currentColor"
                         fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                     >
                         <path stroke="none" d="M0 0h24v24H0z"></path>
                         <path d="M21 3l-6.5 18a0.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a0.55 .55 0 0 1 0 -1l18 -6.5"></path>
