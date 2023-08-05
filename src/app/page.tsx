@@ -1,83 +1,60 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useTheme } from "next-themes";
-import Image from "next/image";
 
 import Link from "next/link";
-import { useRouter } from "next/router";
 import React from "react";
 
 const tools = [
     {
         name: "TypeScript",
-        url: "https://www.typescriptlang.org/",
-        class: "hover:from-blue-500 hover:to-blue-500 after:hover:from-blue-400 after:hover:to-blue-500",
+        url: "https://typescriptlang.org",
         id: "typescript",
     },
     {
-        name: "Next.js",
-        url: "https://nextjs.org/",
-        class: "hover:from-gray-500 hover:to-gray-500 after:hover:from-gray-400 after:hover:to-gray-500",
-        id: "nextdotjs/gray",
-    },
-    {
-        name: "PHP",
-        url: "https://www.php.net/",
-        class: "hover:from-purple-200 hover:to-purple-200 after:hover:from-purple-400 after:hover:to-purple-200",
-        id: "php",
-    },
-    {
-        name: "Vercel",
-        url: "https://vercel.com/",
-        class: "hover:from-blue-500 hover:to-blue-500 after:hover:from-blue-400 after:hover:to-blue-500",
-        id: "vercel/gray",
+        name: "Go",
+        url: "https://go.dev",
+        id: "go",
     },
     {
         name: "Python",
-        url: "https://www.python.org/",
-        class: "hover:from-yellow-500 hover:to-yellow-500 after:hover:from-yellow-400 after:hover:to-yellow-500",
+        url: "https://python.org",
         id: "python",
     },
     {
-        name: "Django",
-        url: "https://www.djangoproject.com/",
-        class: "hover:from-green-500 hover:to-green-500 after:hover:from-green-400 after:hover:to-green-500",
-        id: "django",
+        name: "PHP",
+        url: "https://php.net",
+        id: "php",
     },
     {
         name: "Nodejs",
-        url: "https://nodejs.org/",
-        class: "hover:from-green-500 hover:to-green-500 after:hover:from-green-400 after:hover:to-green-500",
+        url: "https://nodejs.org",
         id: "nodedotjs",
     },
     {
+        name: "Next.js",
+        url: "https://nextjs.org",
+        id: "nextdotjs/gray",
+    },
+    {
         name: "Express",
-        url: "https://expressjs.com/",
-        class: "hover:from-gray-500 hover:to-gray-500 after:hover:from-gray-400 after:hover:to-gray-500",
+        url: "https://expressjs.com",
         id: "express/gray",
     },
     {
         name: "MongoDB",
-        url: "https://www.mongodb.com/",
-        class: "hover:from-green-500 hover:to-green-500 after:hover:from-green-400 after:hover:to-green-500",
+        url: "https://mongodb.com",
         id: "mongodb",
     },
     {
-        name: "Flask",
-        url: "https://flask.palletsprojects.com/",
-        class: "hover:from-gray-500 hover:to-gray-500 after:hover:from-gray-400 after:hover:to-gray-500",
-        id: "flask/gray",
-    },
-    {
         name: "PostgreSQL",
-        url: "https://www.postgresql.org/",
-        class: "hover:from-blue-500 hover:to-blue-500 after:hover:from-blue-400 after:hover:to-blue-500",
+        url: "https://postgresql.org",
         id: "postgresql",
     },
     {
         name: "MySQL",
-        url: "https://www.mysql.com/",
-        class: "hover:from-blue-500 hover:to-blue-500 after:hover:from-blue-400 after:hover:to-blue-500",
+        url: "https://mysql.com",
         id: "mysql",
     },
 ];
@@ -111,26 +88,20 @@ export default function Home() {
                             className="flex flex-row items-center m-4 space-x-2 grayscale hover:grayscale-0"
                         >
                             <img
-                                className=""
                                 src={`https://cdn.simpleicons.org/${tool.id}`}
-                                width={30}
-                                height={30}
-                                alt={tool.name as string}
+                                width={20}
+                                height={20}
+                                alt={tool.name}
                             />
-                            <span
-                                className={`relative whitespace-nowrap  bg-gradient-to-r from-gray-500 to-gray-500 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0  ${tool.class}`}
-                            >
-                                {tool?.name}
+                            <span className="hover:from-gray-500 hover:to-gray-500 after:hover:from-gray-400 after:hover:to-gray-500 relative whitespace-nowrap  bg-gradient-to-r from-gray-500 to-gray-500 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0">
+                                {tool.name}
                             </span>
                         </Link>
                     ))}
                 </div>
             </div>
             <div className="">
-                <button
-                    onClick={toggle}
-                    className="flex items-center justify-center w-20 h-20"
-                >
+                <button onClick={toggle} className="flex items-center justify-center w-20 h-20">
                     {theme === "dark" ? (
                         <svg
                             fill="#fff"
@@ -138,7 +109,7 @@ export default function Home() {
                             height="64px"
                             viewBox="-7.5 0 32 32"
                             version="1.1"
-                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns="http://w3.org/2000/svg"
                             className="scale-50 dark:block"
                         >
                             <g id="SVGRepo_bgCarrier" strokeWidth="0" />
@@ -160,7 +131,7 @@ export default function Home() {
                             width="40px"
                             height="40px"
                             viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns="http://w3.org/2000/svg"
                             className="block scale-50 dark:hidden"
                         >
                             <g id="SVGRepo_bgCarrier" strokeWidth="0" />
@@ -239,7 +210,7 @@ export default function Home() {
                 ,{" "}
                 <Link
                     className="relative bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-blue-600 after:to-blue-500 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
-                    href="https://www.linkedin.com/in/klefcodes"
+                    href="https://linkedin.com/in/klefcodes"
                     rel="noopener"
                     target="_blank"
                 >
@@ -271,9 +242,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="grid cursor-cell select-none grid-flow-col gap-1.5 pl-4 transition-all hover:text-gray-300"
                 >
-                    <div className="leading-4 break-all line-clamp-1">
-                        Not Playing
-                    </div>
+                    <div className="leading-4 break-all line-clamp-1">Not Playing</div>
                     <svg
                         className="w-4 h-4 icon icon-tabler icon-tabler-brand-spotify"
                         width="24"
@@ -338,14 +307,12 @@ export default function Home() {
                     </svg>
                 </div>
                 <a
-                    href="https://www.google.com/maps/search/Abuja, Nigeria"
+                    href="https://google.com/maps/search/Abuja, Nigeria"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="grid cursor-ne-resize select-none grid-flow-col gap-1.5 transition-all hover:text-gray-300"
                 >
-                    <div className="leading-4 break-all line-clamp-1">
-                        Abuja, Nigeria
-                    </div>
+                    <div className="leading-4 break-all line-clamp-1">Abuja, Nigeria</div>
                     <svg
                         className="icon icon-tabler icon-tabler-location mx-px h-4 w-3.5"
                         width="24"
