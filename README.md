@@ -46,6 +46,6 @@
 **🎉 Stats**
 
 <p>My weekly language stats based on Wakatime</p>
-<a href="https://github.com/klefcodes">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/wakatime?username=klefcodes" />
+<a href="https://github.com/klef-dev">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/wakatime?username=klef-dev" />
 </a>

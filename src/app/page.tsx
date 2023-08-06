@@ -210,7 +210,7 @@ export default function Home() {
                 <br />I build{" "}
                 <Link
                     className="relative bg-gradient-to-r from-green-400 to-green-300 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-left after:bg-gradient-to-r after:from-green-400 after:to-green-300 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring after:content-[''] hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
-                    href="https://github.com/klefcodes"
+                    href="https://github.com/klef-dev"
                     rel="noopener"
                     target="_blank"
                 >
@@ -224,7 +224,8 @@ export default function Home() {
                 </span>{" "}
                 and <br /> web experiences for developers.
                 <br />
-                <br />I created{" "}
+                <br />
+                Creator of{" "}
                 <Link
                     className="relative bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-blue-400 after:to-blue-300 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
                     href="https://brimble.io"
@@ -249,7 +250,7 @@ export default function Home() {
                 <br />
                 <Link
                     className="relative  decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-white after:to-white  after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
-                    href="https://x.com/klefcodes"
+                    href="https://x.com/klefdev"
                     rel="noopener"
                     target="_blank"
                 >
@@ -258,7 +259,7 @@ export default function Home() {
                 ,{" "}
                 <Link
                     className="relative bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-blue-600 after:to-blue-500 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
-                    href="https://linkedin.com/in/klefcodes"
+                    href="https://linkedin.com/in/klefdev"
                     rel="noopener"
                     target="_blank"
                 >
@@ -267,7 +268,7 @@ export default function Home() {
                 ,{" "}
                 <Link
                     className="relative bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-amber-400 after:to-amber-500 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
-                    href="https://instagram.com/klefcodes"
+                    href="https://instagram.com/klefdev"
                     rel="noopener"
                     target="_blank"
                 >
@@ -276,7 +277,7 @@ export default function Home() {
                 or{" "}
                 <Link
                     className="relative bg-gradient-to-r from-red-500 to-pink-400 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-red-500 after:to-pink-400 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
-                    href="mailto:me@klefcodes.net"
+                    href="mailto:hi@klef.dev"
                 >
                     say hi
                 </Link>
@@ -284,7 +285,11 @@ export default function Home() {
             </div>
 
             <div className="absolute bottom-0 left-0 gap-1 p-2 text-[10px] text-gray-500 justify-items-end sm:p-4">
-                <Link href={"https://brimble.io"} className="flex flex-row items-center gap-x-2">
+                <Link
+                    href={"https://brimble.io"}
+                    target="_blank"
+                    className="flex flex-row items-center gap-x-2"
+                >
                     <div className="flex items-center h-10 pr-3 bg-black rounded-md">
                         <svg
                             width="36"
@@ -301,7 +306,7 @@ export default function Home() {
                             />
                         </svg>
                         <div className="w-[1px] h-10  bg-white/20 mr-2" />
-                        <span className="">Powered by Brimble</span>
+                        <span className="">Deployed on Brimble</span>
                     </div>
                 </Link>
             </div>
