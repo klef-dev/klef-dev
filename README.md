@@ -47,5 +47,5 @@
 
 <p>My weekly language stats based on Wakatime</p>
 <a href="https://github.com/klef-dev">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/wakatime?username=klef-dev" />
+  <img align="center" src="https://github-readme-stats.vercel.app/api/wakatime?username=klefdev" />
 </a>
