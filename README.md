@@ -32,7 +32,7 @@
 **👨🏽‍💻 Deployments**
 
 <a href="https://brimble.io"><img height="30" src="https://res.cloudinary.com/dgqfojhx4/image/upload/v1674552718/brimble-assets/img/brimble-in-circle_zbkids.svg"></a>
-<a href="https://vercel.com"><img height="30" src="https://cdn.simpleicons.org/vercel/white"></a>
+<a href="https://vercel.com"><img height="30" src="https://cdn.simpleicons.org/vercel/gray"></a>
 <a href="https://netlify.com"><img height="30" src="https://res.cloudinary.com/dgqfojhx4/image/upload/v1686909209/brimble-assets/netlify_bwxw0a.svg"></a>
 
 **DevOps/Toolings**
