@@ -1,6 +1,6 @@
 import useSWR from "swr";
 
-const API_URL = process.env.API_URL || "http://localhost:3333";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3333";
 
 export const useTrack = () => {
     const { data, error, isLoading } = useSWR("/api/track", fetcher);
