@@ -225,7 +225,7 @@ export default function Home() {
                 and <br /> web experiences for developers.
                 <br />
                 <br />
-                Creator of{" "}
+                Co-Creator of{" "}
                 <Link
                     className="relative bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-blue-400 after:to-blue-300 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
                     href="https://brimble.io"
