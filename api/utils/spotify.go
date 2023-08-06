@@ -14,6 +14,9 @@ import (
 type Common struct {
 	Name string `json:"name"`
 	ID   string `json:"id"`
+	Url  struct {
+		Spotify string `json:"spotify"`
+	} `json:"external_urls"`
 }
 
 type Playing struct {
@@ -28,6 +31,7 @@ type Track struct {
 	Name      string   `json:"name,omitempty"`
 	IsPlaying bool     `json:"is_playing"`
 	Artists   []Common `json:"artists,omitempty"`
+	Url       string   `json:"url,omitempty"`
 }
 
 type AccessToken struct {

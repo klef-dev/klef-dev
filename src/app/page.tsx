@@ -2,10 +2,9 @@
 "use client";
 
 import { useTheme } from "next-themes";
-
 import Link from "next/link";
-import { useRouter } from "next/router";
 import React from "react";
+import { useTrack } from "@/hooks";
 
 const tools = [
     {
@@ -90,11 +89,22 @@ const tools = [
     },
 ];
 
+type Track = {
+    is_playing: boolean;
+    name: string;
+    id: string;
+    url: string;
+    artists: {
+        name: string;
+    }[];
+};
+
 export default function Home() {
     const { theme, setTheme } = useTheme();
     const [mounted, setMounted] = React.useState(false);
-
     const [showTools, setShowTools] = React.useState(false);
+
+    const { data }: { data: Track } = useTrack();
 
     const toggle = () => {
         setTheme(theme === "dark" ? "light" : "dark");
@@ -232,7 +242,7 @@ export default function Home() {
                 >
                     tools
                 </button>{" "}
-                I&apos;ve worked with.
+                I work with.
                 <br />
                 <br />
                 Follow me on
@@ -298,12 +308,41 @@ export default function Home() {
 
             <div className="absolute bottom-0 right-0 grid justify-items-end gap-1 p-2 text-[10px] text-gray-500 sm:p-4">
                 <a
-                    href="https://open.spotify.com/user/60c4w28s5vmzo03qrlssmief6?si=0c72c362ccd94fe1"
+                    href={
+                        data?.url ||
+                        "https://open.spotify.com/user/60c4w28s5vmzo03qrlssmief6?si=0c72c362ccd94fe1"
+                    }
                     target="_blank"
                     rel="noopener noreferrer"
                     className="grid cursor-cell select-none grid-flow-col gap-1.5 pl-4 transition-all hover:text-gray-300"
                 >
-                    <div className="leading-4 break-all line-clamp-1">Not Playing</div>
+                    <div className="leading-4 break-all line-clamp-1">
+                        {data?.is_playing ? (
+                            <span>
+                                {data.name} by{" "}
+                                {data.artists.map((artist) => artist.name).join(", ")}
+                            </span>
+                        ) : (
+                            <span>Not Listening</span>
+                        )}
+                    </div>
+                    <svg
+                        className="w-4 h-4 icon icon-tabler icon-tabler-brand-spotify"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.7"
+                        stroke="currentColor"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z"></path>
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <path d="M9 15c1.5 -1 4 -1 5 .5"></path>
+                        <path d="M8 11.973c2.5 -1.473 5.5 -.973 7.5 .527"></path>
+                        <path d="M7 9c2 -1 6 -2 10 .5"></path>
+                    </svg>
                 </a>
                 <div className="grid select-none grid-flow-col gap-1.5 transition-all hover:text-gray-300">
                     <div className="font-mono leading-4 tracking-wider">

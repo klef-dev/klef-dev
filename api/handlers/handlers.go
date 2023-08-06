@@ -26,5 +26,6 @@ func GetTrack(c *fiber.Ctx) error {
 		ID:        data.Item.ID,
 		IsPlaying: data.IsPlaying,
 		Artists:   data.Item.Artists,
+		Url:       data.Item.Url.Spotify,
 	}})
 }

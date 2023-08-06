@@ -8,5 +8,7 @@ import (
 
 func Routers(app *fiber.App) {
 	app.Get("/", handlers.Index)
-	app.Get("/track", handlers.GetTrack)
+	
+	api := app.Group("/api")
+	api.Get("/track", handlers.GetTrack)
 }
