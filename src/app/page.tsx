@@ -33,14 +33,14 @@ const tools = [
         id: "nodedotjs",
     },
     {
+        name: "React",
+        url: "https://react.dev",
+        id: "react",
+    },
+    {
         name: "Next.js",
         url: "https://nextjs.org",
         id: "nextdotjs/gray",
-    },
-    {
-        name: "Express",
-        url: "https://expressjs.com",
-        id: "express/gray",
     },
     {
         name: "MongoDB",
@@ -56,6 +56,36 @@ const tools = [
         name: "MySQL",
         url: "https://mysql.com",
         id: "mysql",
+    },
+    {
+        name: "Redis",
+        url: "https://redis.com",
+        id: "redis",
+    },
+    {
+        name: "Git",
+        url: "https://git-scm.com",
+        id: "git",
+    },
+    {
+        name: "AWS",
+        url: "https://aws.com",
+        id: "amazonaws",
+    },
+    {
+        name: "Docker",
+        url: "https://docker.com",
+        id: "docker",
+    },
+    {
+        name: "Linux",
+        url: "https://linux.com",
+        id: "linux",
+    },
+    {
+        name: "Caddy",
+        url: "https://caddyserver.com",
+        id: "caddy",
     },
 ];
 
@@ -84,6 +114,7 @@ export default function Home() {
                     {tools.map((tool) => (
                         <Link
                             href={tool.url}
+                            target="_blank"
                             key={tool.name}
                             className="flex flex-row items-center m-4 space-x-2 grayscale hover:grayscale-0"
                         >
@@ -186,15 +217,14 @@ export default function Home() {
                 a deployment platform.
                 <br />
                 <br />
-                Here are the{" "}
+                Here are the major{" "}
                 <button
                     onClick={() => setShowTools(true)}
                     className="relative bg-gradient-to-r from-orange-900 to-orange-900 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-orange-900 after:to-orange-900 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
-                    // href="/?tools=true"
                 >
                     tools
                 </button>{" "}
-                i have worked with.
+                I&apos;ve worked with.
                 <br />
                 <br />
                 Follow me on
