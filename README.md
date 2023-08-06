@@ -14,14 +14,14 @@
 
 **🌱 Frameworks:**
 
-<code><img height="30" src="https://cdn.simpleicons.org/nextdotjs/white"></code>
+<code><img height="30" src="https://cdn.simpleicons.org/nextdotjs/gray"></code>
 <code><img height="32" src="https://res.cloudinary.com/dgqfojhx4/image/upload/v1674506214/brimble-assets/react_enqbki.svg"></code>
 <code><img height="30" src="https://res.cloudinary.com/dgqfojhx4/image/upload/v1674506214/brimble-assets/nuxt_jezlae.svg"></code>
 <code><img height="30" src="https://res.cloudinary.com/dgqfojhx4/image/upload/v1674506215/brimble-assets/vue_ms0yrd.svg"></code>
 <code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/express/express.png"></code>
 <code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/laravel/laravel.png"></code>
 <code><img height="35" src="https://res.cloudinary.com/dgqfojhx4/image/upload/v1686908051/brimble-assets/fastapi-1_xr24t8.svg"></code>
-<code><img height="35" src="https://cdn.simpleicons.org/flask/white"></code>
+<code><img height="35" src="https://cdn.simpleicons.org/flask/gray"></code>
 
 **💽 Databases:**
 
