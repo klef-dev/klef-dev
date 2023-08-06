@@ -1,34 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align= "center"><b>Topboy 🙃</b></h1>
 
-## Getting Started
+<p align="center">
+Thanks for stopping by 🤝
+</p>
 
-First, run the development server:
+**😌 Sneakpeak about me**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Just call me klef! I build stuff that works on the web! 😉 <br>
+I love listening to music while on duty 😄
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**🎧 My recently played**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+[![Spotify recently played](https://spotify-recently-played-readme.vercel.app/api?user=60c4w28s5vmzo03qrlssmief6&count=3)](https://open.spotify.com/user/60c4w28s5vmzo03qrlssmief6)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<h1 align= "center"><b>Tools 🛠</b></h1>
+<p align="center">
+  This section is about what I've worked with and what I use almost in my day-to-day activities. <br />
+</p>
 
-## Learn More
+**⚡️ Languages:**
 
-To learn more about Next.js, take a look at the following resources:
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png"></code>
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/php/php.png"></code>
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png"></code>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**🌱 Frameworks:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<code><img height="30" src="https://res.cloudinary.com/dgqfojhx4/image/upload/v1674506214/brimble-assets/next_pc5sq8.svg"></code>
+<code><img height="32" src="https://res.cloudinary.com/dgqfojhx4/image/upload/v1674506214/brimble-assets/react_enqbki.svg"></code>
+<code><img height="30" src="https://res.cloudinary.com/dgqfojhx4/image/upload/v1674506214/brimble-assets/nuxt_jezlae.svg"></code>
+<code><img height="30" src="https://res.cloudinary.com/dgqfojhx4/image/upload/v1674506215/brimble-assets/vue_ms0yrd.svg"></code>
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/express/express.png"></code>
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/laravel/laravel.png"></code>
+<code><img height="35" src="https://res.cloudinary.com/dgqfojhx4/image/upload/v1686908051/brimble-assets/fastapi-1_xr24t8.svg"></code>
+<code><img height="35" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/flask/flask.png"></code>
 
-## Deploy on Vercel
+**💽 Databases:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/postgresql/postgresql.png"></code>
+<code><img height="50" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mongodb/mongodb.png"></code>
+<code><img height="50" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png"></code>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**👨🏽‍💻 Deployments**
+
+<a href="https://brimble.io"><img height="30" src="https://res.cloudinary.com/dgqfojhx4/image/upload/v1674552718/brimble-assets/img/brimble-in-circle_zbkids.svg"></a>
+<a href="https://vercel.com"><img height="30" src="https://res.cloudinary.com/dgqfojhx4/image/upload/v1686909145/brimble-assets/logo-vercel_tw3zoh.svg"></a>
+<a href="https://netlify.com"><img height="30" src="https://res.cloudinary.com/dgqfojhx4/image/upload/v1686909209/brimble-assets/netlify_bwxw0a.svg"></a>
+
+**DevOps/Toolings**
+
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/docker/docker.png"></code>
+<code><img height="30" src="https://res.cloudinary.com/dgqfojhx4/image/upload/v1674506215/brimble-assets/vite_od522b.svg"></code>
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/aws/aws.png"></code>
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/kubernetes/kubernetes.png"></code>
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/firebase/firebase.png"></code>
+
+**🎉 Stats**
+
+<p>My weekly language stats based on Wakatime</p>
+<a href="https://github.com/klefcodes">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/wakatime?username=klefcodes" />
+</a>
+
+**😎 Reach me**
+
+<a href="https://twitter.com/klefcodes">
+  <img align="left" alt="klefcodes | Twitter" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg" />
+</a>
+<a href="https://www.linkedin.com/in/klefcodes">
+  <img align="left" alt="klefcodes's LinkdeIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />
+</a>
+<a href="https://www.instagram.com/klefcodes">
+  <img align="left" alt="klefcodes's Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />
+</a>
