@@ -13,8 +13,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width" />
                 <meta name="theme-color" content="#000000" />
-                <meta name="description" content="Product Engineer" />
+
                 <title>Abraham Ugbeshe</title>
+                <meta name="title" content="Abraham Ugbeshe" />
+                <meta name="description" content="Software Engineer" />
+
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://klef.dev" />
+                <meta property="og:title" content="Abraham Ugbeshe" />
+                <meta property="og:description" content="Software Engineer" />
+                <meta
+                    property="og:image"
+                    content="http://res.cloudinary.com/dgqfojhx4/image/upload/v1691268979/screenshots/yopydnezwwyj11lstcdh.png"
+                />
+
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="https://klef.dev" />
+                <meta property="twitter:title" content="Abraham Ugbeshe" />
+                <meta property="twitter:description" content="Software Engineer" />
+                <meta
+                    property="twitter:image"
+                    content="http://res.cloudinary.com/dgqfojhx4/image/upload/v1691268979/screenshots/yopydnezwwyj11lstcdh.png"
+                />
             </head>
             <body className={inter.className}>
                 <NextThemesProvider defaultTheme="dark">{children}</NextThemesProvider>
