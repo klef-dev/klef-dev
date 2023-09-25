@@ -205,7 +205,7 @@ export default function Home() {
                 </button>
             </div>
             <div className="max-w-2xl px-8 text-sm text-gray-500">
-                Yooo, I&apos;m Abraham.
+                Yooo 👋🏼, I&apos;m Abraham.
                 <br />
                 <br />I build{" "}
                 <Link
@@ -322,7 +322,7 @@ export default function Home() {
                     className="grid cursor-cell select-none grid-flow-col gap-1.5 pl-4 transition-all hover:text-gray-300"
                 >
                     <div className="leading-4 break-all line-clamp-1">
-                        {data?.is_playing ? (
+                        {data?.is_playing && data?.name ? (
                             <span>
                                 {data.name} by{" "}
                                 {data.artists.map((artist) => artist.name).join(", ")}
