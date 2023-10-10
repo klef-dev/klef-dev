@@ -205,7 +205,7 @@ export default function Home() {
                 </button>
             </div>
             <div className="max-w-2xl px-8 text-sm text-gray-500">
-                Yooo, I&apos;m Abraham.
+                Yooo, I&apos;m Abraham 🤙.
                 <br />
                 <br />I build{" "}
                 <Link
