@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import React from "react";
 import { useTrack } from "@/hooks";
+import os from "os";
 
 const tools = [
     {
@@ -115,6 +116,7 @@ export default function Home() {
     const [time, setTime] = React.useState(new Date());
 
     React.useEffect(() => {
+        console.log(`From: ${os.hostname()}`);
         const timer = setInterval(() => setTime(new Date()), 1000);
         return () => clearInterval(timer);
     }, []);
@@ -205,7 +207,7 @@ export default function Home() {
                 </button>
             </div>
             <div className="max-w-2xl px-8 text-sm text-gray-500">
-                Yooo 👋🏼, I&apos;m Abraham.
+                Yooo 👋🏼, I&apos;m Abraham Ugbeshe.
                 <br />
                 <br />I build{" "}
                 <Link
