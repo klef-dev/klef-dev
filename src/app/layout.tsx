@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <script
                     defer
                     src="https://cdn.brimble.io/track.js"
-                    data-website-id="14a82dc6-0986-49d3-84a4-8bf8ebef996f"
+                    data-website-id="e7e12329-4727-4a7f-9f26-aab4649a66ce"
                 ></script>
             </head>
             <body className={inter.className}>
