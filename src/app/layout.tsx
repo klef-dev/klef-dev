@@ -35,6 +35,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     property="twitter:image"
                     content="http://res.cloudinary.com/dgqfojhx4/image/upload/v1691268979/screenshots/yopydnezwwyj11lstcdh.png"
                 />
+                <script
+                    defer
+                    src="https://brimble.supalytics.co/track.js"
+                    data-website-id="e7e12329-4727-4a7f-9f26-aab4649a66ce"
+                ></script>
             </head>
             <body className={inter.className}>
                 <NextThemesProvider defaultTheme="dark">{children}</NextThemesProvider>
