@@ -63,6 +63,21 @@ const tools = [
         id: "redis",
     },
     {
+        name: "Supabase",
+        url: "https://supabase.com",
+        id: "supabase",
+    },
+    {
+        name: "Drizzle",
+        url: "https://drizzle.dev",
+        id: "drizzle",
+    },
+    {
+        name: "tRPC",
+        url: "https://trpc.io",
+        id: "trpc",
+    },
+    {
         name: "Git",
         url: "https://git-scm.com",
         id: "git",
@@ -70,7 +85,7 @@ const tools = [
     {
         name: "AWS",
         url: "https://aws.com",
-        id: "amazonaws",
+        id: "amazonwebservices",
     },
     {
         name: "Docker",
@@ -124,7 +139,7 @@ export default function Home() {
         <main className="flex flex-col items-center justify-center w-screen min-h-screen">
             <div
                 onClick={() => setShowTools(false)}
-                className={`z-50 backdrop-blur-sm transition-all flex items-center justify-center duration-300 bg-black/80  w-screen fixed top-0 left-0 overflow-hidden ${
+                className={`z-50 backdrop-blur-sm transition-all flex items-center justify-center duration-300 dark:bg-black/80 bg-white/80 w-screen fixed top-0 left-0 overflow-hidden ${
                     showTools ? "h-screen" : "h-0"
                 }`}
             >
@@ -290,7 +305,7 @@ export default function Home() {
                     target="_blank"
                     className="flex flex-row items-center gap-x-2"
                 >
-                    <div className="flex items-center h-10 pr-3 bg-black rounded-md">
+                    <div className="flex items-center h-10 pr-3 dark:bg-black bg-gray-100 rounded-md">
                         <svg
                             width="36"
                             height="36"

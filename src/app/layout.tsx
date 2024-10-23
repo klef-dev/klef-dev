@@ -42,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 ></script>
             </head>
             <body className={inter.className}>
-                <NextThemesProvider defaultTheme="dark">{children}</NextThemesProvider>
+                <NextThemesProvider defaultTheme="light">{children}</NextThemesProvider>
             </body>
         </html>
     );
