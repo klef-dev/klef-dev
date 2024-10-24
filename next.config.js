@@ -3,6 +3,7 @@ const nextConfig = {
     reactStrictMode: true,
     images: {
         domains: ["cdn.simpleicons.org"],
+        dangerouslyAllowSVG: true,
     },
 };
 

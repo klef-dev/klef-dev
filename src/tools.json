@@ -1,0 +1,97 @@
+[
+    {
+        "name": "TypeScript",
+        "url": "https://typescriptlang.org",
+        "id": "typescript"
+    },
+    {
+        "name": "Go",
+        "url": "https://go.dev",
+        "id": "go"
+    },
+    {
+        "name": "Python",
+        "url": "https://python.org",
+        "id": "python"
+    },
+    {
+        "name": "PHP",
+        "url": "https://php.net",
+        "id": "php"
+    },
+    {
+        "name": "Nodejs",
+        "url": "https://nodejs.org",
+        "id": "nodedotjs"
+    },
+    {
+        "name": "React",
+        "url": "https://react.dev",
+        "id": "react"
+    },
+    {
+        "name": "Next.js",
+        "url": "https://nextjs.org",
+        "id": "nextdotjs/gray"
+    },
+    {
+        "name": "MongoDB",
+        "url": "https://mongodb.com",
+        "id": "mongodb"
+    },
+    {
+        "name": "PostgreSQL",
+        "url": "https://postgresql.org",
+        "id": "postgresql"
+    },
+    {
+        "name": "MySQL",
+        "url": "https://mysql.com",
+        "id": "mysql"
+    },
+    {
+        "name": "Redis",
+        "url": "https://redis.com",
+        "id": "redis"
+    },
+    {
+        "name": "Supabase",
+        "url": "https://supabase.com",
+        "id": "supabase"
+    },
+    {
+        "name": "Drizzle",
+        "url": "https://drizzle.dev",
+        "id": "drizzle"
+    },
+    {
+        "name": "tRPC",
+        "url": "https://trpc.io",
+        "id": "trpc"
+    },
+    {
+        "name": "Git",
+        "url": "https://git-scm.com",
+        "id": "git"
+    },
+    {
+        "name": "AWS",
+        "url": "https://aws.com",
+        "id": "amazonwebservices"
+    },
+    {
+        "name": "Docker",
+        "url": "https://docker.com",
+        "id": "docker"
+    },
+    {
+        "name": "Linux",
+        "url": "https://linux.com",
+        "id": "linux"
+    },
+    {
+        "name": "Caddy",
+        "url": "https://caddyserver.com",
+        "id": "caddy"
+    }
+]

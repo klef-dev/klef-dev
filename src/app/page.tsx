@@ -1,138 +1,26 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import { useTrack } from "@/hooks";
-
-const tools = [
-    {
-        name: "TypeScript",
-        url: "https://typescriptlang.org",
-        id: "typescript",
-    },
-    {
-        name: "Go",
-        url: "https://go.dev",
-        id: "go",
-    },
-    {
-        name: "Python",
-        url: "https://python.org",
-        id: "python",
-    },
-    {
-        name: "PHP",
-        url: "https://php.net",
-        id: "php",
-    },
-    {
-        name: "Nodejs",
-        url: "https://nodejs.org",
-        id: "nodedotjs",
-    },
-    {
-        name: "React",
-        url: "https://react.dev",
-        id: "react",
-    },
-    {
-        name: "Next.js",
-        url: "https://nextjs.org",
-        id: "nextdotjs/gray",
-    },
-    {
-        name: "MongoDB",
-        url: "https://mongodb.com",
-        id: "mongodb",
-    },
-    {
-        name: "PostgreSQL",
-        url: "https://postgresql.org",
-        id: "postgresql",
-    },
-    {
-        name: "MySQL",
-        url: "https://mysql.com",
-        id: "mysql",
-    },
-    {
-        name: "Redis",
-        url: "https://redis.com",
-        id: "redis",
-    },
-    {
-        name: "Supabase",
-        url: "https://supabase.com",
-        id: "supabase",
-    },
-    {
-        name: "Drizzle",
-        url: "https://drizzle.dev",
-        id: "drizzle",
-    },
-    {
-        name: "tRPC",
-        url: "https://trpc.io",
-        id: "trpc",
-    },
-    {
-        name: "Git",
-        url: "https://git-scm.com",
-        id: "git",
-    },
-    {
-        name: "AWS",
-        url: "https://aws.com",
-        id: "amazonwebservices",
-    },
-    {
-        name: "Docker",
-        url: "https://docker.com",
-        id: "docker",
-    },
-    {
-        name: "Linux",
-        url: "https://linux.com",
-        id: "linux",
-    },
-    {
-        name: "Caddy",
-        url: "https://caddyserver.com",
-        id: "caddy",
-    },
-];
-
-type Track = {
-    is_playing: boolean;
-    name: string;
-    id: string;
-    url: string;
-    artists: {
-        name: string;
-    }[];
-};
+import tools from "@/tools.json";
 
 export default function Home() {
     const { theme, setTheme } = useTheme();
     const [mounted, setMounted] = React.useState(false);
     const [showTools, setShowTools] = React.useState(false);
-
-    const { data }: { data: Track } = useTrack();
-
-    const toggle = () => {
-        setTheme(theme === "dark" ? "light" : "dark");
-    };
+    const [time, setTime] = React.useState(new Date());
+    const { data } = useTrack();
 
     React.useEffect(() => setMounted(true), []);
-
-    const [time, setTime] = React.useState(new Date());
-
     React.useEffect(() => {
         const timer = setInterval(() => setTime(new Date()), 1000);
         return () => clearInterval(timer);
     }, []);
+
+    const toggle = () => setTheme(theme === "dark" ? "light" : "dark");
 
     if (!mounted) return null;
     return (
@@ -151,13 +39,13 @@ export default function Home() {
                             key={tool.name}
                             className="flex flex-row items-center m-4 space-x-2 grayscale hover:grayscale-0"
                         >
-                            <img
+                            <Image
                                 src={`https://cdn.simpleicons.org/${tool.id}`}
                                 width={20}
                                 height={20}
                                 alt={tool.name}
                             />
-                            <span className="hover:from-gray-500 hover:to-gray-500 after:hover:from-gray-400 after:hover:to-gray-500 relative whitespace-nowrap  bg-gradient-to-r from-gray-500 to-gray-500 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0">
+                            <span className="hover:from-gray-500 hover:to-gray-500 after:hover:from-gray-400 after:hover:to-gray-500 relative whitespace-nowrap  bg-gradient-to-r from-gray-500 to-gray-500 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100">
                                 {tool.name}
                             </span>
                         </Link>
@@ -224,7 +112,7 @@ export default function Home() {
                 <br />
                 <br />I build{" "}
                 <Link
-                    className="relative bg-gradient-to-r from-green-400 to-green-300 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-left after:bg-gradient-to-r after:from-green-400 after:to-green-300 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring after:content-[''] hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
+                    className="relative bg-gradient-to-r from-green-400 to-green-300 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-left after:bg-gradient-to-r after:from-green-400 after:to-green-300 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring after:content-[''] hover:after:origin-bottom-left hover:after:scale-x-100"
                     href="https://github.com/klef-dev"
                     rel="noopener"
                     target="_blank"
@@ -234,7 +122,7 @@ export default function Home() {
                 that works on the web 👨🏽‍💻
                 <br />
                 I&apos;m obsessed with creating the best{" "}
-                <span className="relative cursor-default bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-gradient-to-r after:from-orange-400 after:to-orange-300 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-left hover:after:scale-x-100 after:origin-right after:scale-x-0">
+                <span className="relative cursor-default bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-gradient-to-r after:from-orange-400 after:to-orange-300 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-left hover:after:scale-x-100">
                     workflows
                 </span>{" "}
                 and <br /> web experiences for developers.
@@ -242,7 +130,7 @@ export default function Home() {
                 <br />
                 Co-Creator of{" "}
                 <Link
-                    className="relative bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-blue-400 after:to-blue-300 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
+                    className="relative bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-blue-400 after:to-blue-300 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100"
                     href="https://brimble.io"
                     target="_blank"
                 >
@@ -254,7 +142,7 @@ export default function Home() {
                 Here are the major{" "}
                 <button
                     onClick={() => setShowTools(true)}
-                    className="relative bg-gradient-to-r from-orange-900 to-orange-900 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-orange-900 after:to-orange-900 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
+                    className="relative bg-gradient-to-r from-orange-900 to-orange-900 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-orange-900 after:to-orange-900 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100"
                 >
                     tools
                 </button>{" "}
@@ -264,7 +152,7 @@ export default function Home() {
                 Follow me on
                 <br />
                 <Link
-                    className="relative  decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-white after:to-white  after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
+                    className="relative  decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-white after:to-white  after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100"
                     href="https://x.com/klefdev"
                     rel="noopener"
                     target="_blank"
@@ -273,7 +161,7 @@ export default function Home() {
                 </Link>
                 ,{" "}
                 <Link
-                    className="relative bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-blue-600 after:to-blue-500 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
+                    className="relative bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-blue-600 after:to-blue-500 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100"
                     href="https://linkedin.com/in/klefdev"
                     rel="noopener"
                     target="_blank"
@@ -282,7 +170,7 @@ export default function Home() {
                 </Link>
                 ,{" "}
                 <Link
-                    className="relative bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-amber-400 after:to-amber-500 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
+                    className="relative bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-amber-400 after:to-amber-500 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100"
                     href="https://instagram.com/klefdev"
                     rel="noopener"
                     target="_blank"
@@ -291,7 +179,7 @@ export default function Home() {
                 </Link>{" "}
                 or{" "}
                 <Link
-                    className="relative bg-gradient-to-r from-red-500 to-pink-400 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-red-500 after:to-pink-400 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100 after:origin-right after:scale-x-0"
+                    className="relative bg-gradient-to-r from-red-500 to-pink-400 bg-clip-text text-transparent decoration-green-500 decoration-2 transition-all after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gradient-to-r after:from-red-500 after:to-pink-400 after:opacity-80 after:transition-transform after:duration-500 after:ease-spring hover:after:origin-bottom-left hover:after:scale-x-100"
                     href="mailto:hi@klef.dev"
                 >
                     say hi
@@ -320,7 +208,7 @@ export default function Home() {
                                 fill="white"
                             />
                         </svg>
-                        <div className="w-[1px] h-10  bg-white/20 mr-2" />
+                        <div className="w-[1px] h-10  dark:bg-white/20 bg-black/20 mr-2" />
                         <span className="">Deployed on Brimble</span>
                     </div>
                 </Link>
