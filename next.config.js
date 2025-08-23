@@ -5,6 +5,7 @@ const nextConfig = {
         domains: ["cdn.simpleicons.org"],
         dangerouslyAllowSVG: true,
     },
+    output: "export",
 };
 
 module.exports = nextConfig;
