@@ -4,6 +4,7 @@ const nextConfig = {
     images: {
         domains: ["cdn.simpleicons.org"],
         dangerouslyAllowSVG: true,
+        unoptimized: true,
     },
     output: "export",
 };

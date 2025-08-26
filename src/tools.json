@@ -75,9 +75,9 @@
         "id": "git"
     },
     {
-        "name": "AWS",
-        "url": "https://aws.com",
-        "id": "amazonwebservices"
+        "name": "Google Cloud",
+        "url": "https://cloud.google.com",
+        "id": "googlecloud"
     },
     {
         "name": "Docker",
