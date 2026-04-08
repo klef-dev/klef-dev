@@ -37,9 +37,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 />
                 <script
                     defer
-                    src="https://cdn.brimble.io/track.js"
-                    data-website-id="e7e12329-4727-4a7f-9f26-aab4649a66ce"
-                ></script>
+                    src="https://scripts.brimble.io/analytics/script.js"
+                    data-website-id="cb7589d0-da01-412c-b266-a86b79d191ca"
+                    data-host-url="https://tracking.brimble.io"
+                />
+                <script
+                    type="module"
+                    dangerouslySetInnerHTML={{
+                        __html: `import { onLCP, onCLS, onINP, onFCP, onTTFB } from 'https://unpkg.com/web-vitals@4?module';
+                            const send = (metric) => (m) => window.umami && window.umami.track('web-vital-' + metric.toLowerCase(), { value: m.value });
+                            onLCP(send('LCP'));
+                            onCLS(send('CLS'));
+                            onINP(send('INP'));
+                            onFCP(send('FCP'));
+                            onTTFB(send('TTFB'));
+                        `,
+                    }}
+                />
             </head>
             <body className={inter.className}>
                 <NextThemesProvider defaultTheme="light">{children}</NextThemesProvider>
