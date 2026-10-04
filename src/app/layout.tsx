@@ -40,19 +40,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     src="https://scripts.brimble.io/analytics/brimble.js"
                     data-website-id="cb7589d0-da01-412c-b266-a86b79d191ca"
                 ></script>
-                <script
-                    type="module"
-                    dangerouslySetInnerHTML={{
-                        __html: `import { onLCP, onCLS, onINP, onFCP, onTTFB } from 'https://unpkg.com/web-vitals@4?module';
-                            const send = (metric) => (m) => window.umami && window.umami.track('web-vital-' + metric.toLowerCase(), { value: m.value });
-                            onLCP(send('LCP'));
-                            onCLS(send('CLS'));
-                            onINP(send('INP'));
-                            onFCP(send('FCP'));
-                            onTTFB(send('TTFB'));
-                        `,
-                    }}
-                />
             </head>
             <body className={inter.className}>
                 <NextThemesProvider defaultTheme="light">{children}</NextThemesProvider>
