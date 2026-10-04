@@ -37,10 +37,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 />
                 <script
                     defer
-                    src="https://scripts.brimble.io/analytics/script.js"
+                    src="https://scripts.brimble.io/analytics/brimble.js"
                     data-website-id="cb7589d0-da01-412c-b266-a86b79d191ca"
-                    data-host-url="https://tracking.brimble.io"
-                />
+                ></script>
                 <script
                     type="module"
                     dangerouslySetInnerHTML={{
